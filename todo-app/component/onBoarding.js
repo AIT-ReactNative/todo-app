@@ -1,6 +1,13 @@
 import { Text , View, SafeAreaView, Image, Pressable } from 'react-native';
 import React, { useState } from 'react';
 import Style from '../styles/onBoardingStyles.js';
+import Animated, {FadeIn, 
+    FadeOut,
+    SlideOutLeft,
+    SlideInRight,
+    SlideInLeft,
+} from 'react-native-reanimated';
+
 
 const onboardingSteps = [
     {
@@ -56,19 +63,28 @@ const Onboarding = () =>{
 
     return (
         <SafeAreaView>
-            <View style={Style.heading}>
-            
-           
-            <Image source={images[data.onImages]} style={Style.images} />
+            <Animated.View entering={FadeIn} existing={FadeOut} style={Style.heading} key={screenIndex}>
+                <View style={Style.stepIndicatorContainer}>
 
+                    {onboardingSteps.map((step, index) => (
+                        
+                        <View key={index} style={[Style.stepIndicator,{backgroundColor: index === screenIndex ? '#6366FF' : 'gray'}]}/>
+                   ))}
+
+                
+                </View>
+           
+           <Animated.View entering={FadeIn} existing={FadeOut}>
+            <Image source={images[data.onImages]} style={Style.images} />
+            </Animated.View>
 
             <View style={Style.footer}>
-            <Text style={Style.title}>
+            <Animated.Text entering={SlideInRight} existing={SlideOutLeft} style={Style.title}>
             {data.title}
-            </Text>
-            <Text style={Style.description}>
+            </Animated.Text> 
+            <Animated.Text entering={SlideInRight.delay(300)} style={Style.description}>
             {data.description}
-            </Text>
+            </Animated.Text>
 
             <View style={Style.buttonRow}>
                 <Text style={Style.skipText}> Skip </Text>
@@ -84,7 +100,7 @@ const Onboarding = () =>{
            
 
 
-            </View>
+            </Animated.View>
         </SafeAreaView>
     )
 }

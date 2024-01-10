@@ -40,7 +40,7 @@ export default Style = StyleSheet.create({
     },
     
     buttonRow: {
-        marginTop: 20,
+        marginTop: 10,
        // backgroundColor: 'yellow',
         flexDirection: 'row',
         alignItems: 'center',
@@ -49,7 +49,7 @@ export default Style = StyleSheet.create({
 
     button:{
         backgroundColor: '#302E38',
-        padding: 15,
+        padding: 10,
         borderRadius: 50,
         flex:1,
     
@@ -68,7 +68,21 @@ export default Style = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         padding: 15,
-      paddingHorizontal: 25,
+        paddingHorizontal: 25,
+    },
+
+
+
+    stepIndicatorContainer: {
+        flexDirection: 'row',
+    },
+
+    stepIndicator: {
+        flex:1,
+        height:3,
+        backgroundColor: 'gray',
+        margin:5,
+        borderRadius: 10,
     },
                  
     
