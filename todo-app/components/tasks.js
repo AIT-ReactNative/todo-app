@@ -4,14 +4,16 @@ import {Picker} from '@react-native-picker/picker';
 import { AntDesign, Feather, FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import styles from '../styles/taskStyles';
 
-export default function Tasks() {
+export default function Tasks( { navigation}) {
   const [selectedLanguage, setSelectedLanguage] = useState();
-
 
   return (
     <View style={styles.container}>
       <View style={styles.title}>
+      <TouchableOpacity
+      onPress={() => navigation.navigate('Onboard')}>
         <AntDesign name="arrowleft" size={40} color="black" />
+      </TouchableOpacity>
         <View style={styles.newBox}>
         <Text style={styles.textSize}>Add New Task</Text>
         </View>
