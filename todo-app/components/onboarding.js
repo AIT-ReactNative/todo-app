@@ -75,7 +75,7 @@ const Onboarding = ({ navigation }) => {
     {onboardingSteps.map((step, index) => (
         <View 
         key={index}
-        style={[styles.stepIndicator, {backgroundColor: index === screenIndex ? '#6366FF' : styles.stepIndicator.backgroundColor}]} />
+        style={[styles.stepIndicator, {backgroundColor: index === screenIndex ? '#7B73FF' : styles.stepIndicator.backgroundColor}]} />
     ))}
     </View>
 
@@ -130,21 +130,20 @@ export default Onboarding
 
 const styles = StyleSheet.create({
     title: {
-        color: '#080930',
+        color: '#2F2E41',
         fontSize: 50,
         fontWeight: 'bold',
         letterSpacing: 1.5,
         marginVertical: 20
     },
     description: {
-        color: 'gray',
+        color: '#888392',
         fontSize: 20,
         lineHeight: 28
     },
     page: {
         flex: 1,
         justifyContent: 'center',
-        //backgroundColor: '#15141A',
         backgroundColor: '#FFF'
     },
     image: {
@@ -161,7 +160,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     button: {
-        backgroundColor: '#080930',
+        backgroundColor: '#2F2E41',
         borderRadius: 50,
         alignItems: 'center',
         width: 250
@@ -180,7 +179,7 @@ const styles = StyleSheet.create({
     },
 
     skipText: {
-        color: '#6366FF',
+        color: '#7B73FF',
         fontSize: 25,
         padding: 15,
         paddingHorizontal: 20
@@ -196,7 +195,7 @@ const styles = StyleSheet.create({
     stepIndicator: {
         flex: 1,
         height: 5, 
-        backgroundColor: 'gray',
+        backgroundColor: '#888392',
         borderRadius: 10
     }
    

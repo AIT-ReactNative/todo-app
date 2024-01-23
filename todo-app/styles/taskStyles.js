@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         height: 60,
         width: 60,
-        backgroundColor: '#080930'
+        backgroundColor: '#2F2E41'
     },
 
     numCircle: {
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         height: 35,
         width: 35,
-        borderColor: '#080930'
+        borderColor: '#2F2E41'
     },
 
     firstInput: {
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     add: {
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#080930',
+        backgroundColor: '#2F2E41',
         height: 65,
         width: '50%',
         borderRadius: 45,

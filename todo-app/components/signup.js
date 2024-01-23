@@ -21,31 +21,34 @@ const SignUp = ({navigation}) => {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        <Image source={require('../assets/images/Checklist.png')} style={styles.logo} />
+      
+      <Image source={require('../assets/images/Sign_up.png')} style={styles.logo} />
+      
+        
         <View style={styles.account}>
           <Text style={styles.title}>Sign Up</Text>
           <View style={styles.inputContainer}>
             <TextInput
-              style={[styles.input, {color: 'black'}]}
+              style={[styles.input, {color: '#2F2E41'}]}
               placeholder="Create your username"
-              placeholderTextColor={'black'}
+              placeholderTextColor={'#2F2E41'}
               value={username}
               onChangeText={setUsername}
             />
 
             <TextInput
-              style={[styles.input, {color: 'black'}]}
+              style={[styles.input, {color: '#2F2E41'}]}
               placeholder="Enter your password"
-              placeholderTextColor={'black'}
+              placeholderTextColor={'#2F2E41'}
               value={password}
               onChangeText={setPassword}
               secureTextEntry={true}
             />
 
             <TextInput
-              style={[styles.input, {color: 'black'}]}
+              style={[styles.input, {color: '#2F2E41'}]}
               placeholder="Confirm your password"
-              placeholderTextColor={'black'}
+              placeholderTextColor={'#2F2E41'}
               value={confirmPassword}
               onChangeText={setConfirmPassword}
               secureTextEntry={true}

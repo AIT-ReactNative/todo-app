@@ -21,13 +21,13 @@ const LogIn = ({navigation}) => {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        <Image source={require('../assets/images/Checklist.png')} style={styles.logo} />
+        <Image source={require('../assets/images/loginn.png')} style={styles.logo} />
         <View style={styles.account}>
           <Text style={styles.title}>Log In</Text>
-          <View style={styles.inputContainer}>
+          <View style={styles.inputConLogIn}>
             <TextInput
               style={[styles.input, {color: 'black'}]}
-              placeholder="Create your username"
+              placeholder="Enter your username"
               placeholderTextColor={'black'}
               value={username}
               onChangeText={setUsername}
@@ -42,29 +42,20 @@ const LogIn = ({navigation}) => {
               secureTextEntry={true}
             />
 
-            <TextInput
-              style={[styles.input, {color: 'black'}]}
-              placeholder="Confirm your password"
-              placeholderTextColor={'black'}
-              value={confirmPassword}
-              onChangeText={setConfirmPassword}
-              secureTextEntry={true}
-            />
-
             {error ? <Text style={styles.errorText}>{error}</Text> : null}
 
             <TouchableOpacity
               style={styles.customBotton}
               onPress={() => navigation.navigate('Task')}
               >
-              <Text style={styles.textt}>Sign Up</Text>
+              <Text style={styles.textt}>Log In</Text>
             </TouchableOpacity>
             <View style={styles.signupContainer}>
-              <Text style={styles.signText}>Do you have an account? </Text>
+              <Text style={styles.signText}>Don't have an account? </Text>
 
               <TouchableOpacity onPress={() => navigation.navigate('Task')}>
                 <Text style={[styles.signText, styles.signupLink]}>
-                  Login Here
+                  SignUp Here
                 </Text>
               </TouchableOpacity>
             </View>

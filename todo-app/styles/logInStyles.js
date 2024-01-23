@@ -8,42 +8,57 @@ const styles = StyleSheet.create({
 
   logo: {
     width: '100%',
-    height: 450,
-    top: -190,
+    top: -200,
+    height: 500,
+  },
+
+  
+  inputContainer: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 30,
   },
 
   account: {
     alignItems: 'center',
     borderWidth: 1,
     borderColor: 'black',
-    height: 500,
-    top: 115,
+    height: 550,
+    top: 150,
     borderTopLeftRadius: 100,
     position: 'absolute',
     backgroundColor: 'white',
     width: '100%',
   },
 
+  inputConLogIn: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 50,
+  },
+
   inputContainer: {
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 30,
   },
 
   input: {
     height: 50,
     margin: 10,
-    backgroundColor: '#D9DDDC',
+    backgroundColor: '#CCCCCC',
     width: '80%',
-    padding: 10,
-    borderRadius: 10,
+    paddingLeft: 20,
+    borderRadius: 50,
     borderBottomWidth: 3,
-    borderBottomColor: '#FFC300',
+    borderBottomColor: '#7B73FF',
   },
 
   title: {
-    color: 'black',
+    color: '#2F2E41',
     fontSize: 50,
     fontWeight: 'bold',
     textAlign: 'center',
@@ -51,8 +66,8 @@ const styles = StyleSheet.create({
   },
 
   customBotton: {
-    backgroundColor: '#FFC300',
-    borderRadius: 10,
+    backgroundColor: '#2F2E41',
+    borderRadius: 50,
     padding: 5,
     width: '80%',
     marginTop: 50,
@@ -70,7 +85,7 @@ const styles = StyleSheet.create({
   signupContainer: {
     flexDirection: 'row',
     marginBottom: 10,
-    marginTop: 10,
+    marginTop: 20,
     alignSelf: 'center',
   },
 
@@ -82,8 +97,8 @@ const styles = StyleSheet.create({
 
   signupLink: {
     fontWeight: 'bold',
-    color: '#FFC300',
-    marginLeft: 5,
+    color: '#7B73FF',
+    marginLeft: 8,
   },
 });
 
