@@ -5,11 +5,15 @@ import { StyleSheet} from 'react-native';
 
 import Tasks from './components/tasks';
 import Onboarding from './components/onboarding';
-
+import SignUp from './components/signup';
+import LogIn from './components/login';
 
 const Stack = createNativeStackNavigator();
 const GestureOnboarding = gestureHandlerRootHOC(Onboarding);
 const GestureTasks = gestureHandlerRootHOC(Tasks);
+const GestureSignup = gestureHandlerRootHOC(SignUp);
+const GestureLogIn = gestureHandlerRootHOC(LogIn);
+
 
 function App() {
   return (
@@ -23,6 +27,10 @@ function App() {
         options={{ headerShown: false}}
         />
         <Stack.Screen name="Onboard" options={{ headerShown: false}} component={GestureOnboarding} />
+      
+        <Stack.Screen name="SignUp" options={{ headerShown: false}} component={GestureSignup} />
+      
+        <Stack.Screen name="LogIn" options={{ headerShown: false}} component={GestureLogIn} />
       </Stack.Navigator>
     </NavigationContainer>
   </GestureHandlerRootView>

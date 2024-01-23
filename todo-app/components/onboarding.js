@@ -53,7 +53,7 @@ const Onboarding = ({ navigation }) => {
 
     const endOnboarding = () => {
         setScreenIndex(0);
-        navigation.navigate('Task');
+        navigation.navigate('SignUp');
     };
 
     const swipeForward = Gesture.Fling()
