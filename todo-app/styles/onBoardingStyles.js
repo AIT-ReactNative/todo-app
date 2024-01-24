@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 export default Style = StyleSheet.create({
     // your styles here 
     heading: {
-        backgroundColor: '#FFF',
+        backgroundColor: '#fff',
         //backgroundColor: '#F122ab1',
         height: '100%',
         width: '100%',
@@ -13,14 +13,23 @@ export default Style = StyleSheet.create({
         padding: 10,
        
             },
+
+    page: {
+        flex: 1,
+        justifyContent: 'center',
+        //backgroundColor: '#15141A',
+        backgroundColor: '#FFF'
+    },
             
     footer: {
-        marginTop: 80
+        marginTop: 'auto'
     },
 
     images: {
-        height: 250,
-     width:300,
+        height: 280,
+        width: 350,
+        alignSelf: 'center',
+        marginTop: 15
         },    
         
         
@@ -74,14 +83,16 @@ export default Style = StyleSheet.create({
 
 
     stepIndicatorContainer: {
-        flexDirection: 'row',
+        flexDirection: "row",
+        gap: 5,
+        marginHorizontal: 15
     },
 
     stepIndicator: {
         flex:1,
         height:3,
         backgroundColor: 'gray',
-        margin:5,
+        margin:2,
         borderRadius: 10,
     },
                  

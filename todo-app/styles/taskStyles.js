@@ -9,12 +9,15 @@ export default Style = StyleSheet.create({
         alignItems: 'center',
         marginTop: 60,
         justifyContent: 'space-evenly',
-                
+               
     },
     
     container: {
+       height: '100%',
         marginTop:54,
         marginHorizontal:20,
+        backgroundColor: 'yellow',
+        
         
     },
 
