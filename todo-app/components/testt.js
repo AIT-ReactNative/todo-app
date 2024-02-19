@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   View,
   TextInput,
@@ -9,22 +9,20 @@ import {
 } from 'react-native';
 import Parse from 'parse/react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import 'react-native-get-random-values';
 
 import styles from '../styles/logInStyles';
 
+// Before using the SDK
 Parse.setAsyncStorage(AsyncStorage);
-Parse.initialize("kP3sNvRtx7zGvFbA1e9d", "uYbGxJrWz1v4p7s0qXtZv3y6A9Dc8BfUjN1g4Kp7S2");
+Parse.initialize('kP3sNvRtx7zGvFbA1e9d', 'uYbGxJrWz1v4p7s0qXtZv3y6A9Dc8BfUjN1g4Kp7S2');
 Parse.serverURL = 'http://192.168.100.62:1337/parse';
 
-const SignUp = ({ navigation }) => {
-  const [username, setUsername] = useState('');
+const Test = ({navigation}) => {
   const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState(''); 
-
-  const user = new Parse.User();
-  user.set("username", username);
-  user.set("password", password);
+  const [error, setError] = useState('');
 
   const handleSignup = async () => {
     if (password !== confirmPassword) {
@@ -32,14 +30,19 @@ const SignUp = ({ navigation }) => {
       return;
     }
 
-    console.log("Signing up user...");
+    console.log('Signing up user...');
+    const user = new Parse.User();
+    user.set('username', username);
+    user.set('password', password);
+
     try {
       await user.signUp();
       navigation.navigate('Task');
-      console.log("Success!", user.id);
+      console.log('Success!');
     } catch (error) {
-      setError("Error signing up"); // Set an error message here
-      console.error("Error: ", error);
+      // Show the error message and let the user try again.
+      setError('Error: ' + error.code + ' ' + error.message);
+      return;
     }
   };
 
@@ -49,29 +52,28 @@ const SignUp = ({ navigation }) => {
         <Image source={require('../assets/images/Sign_up.png')} style={styles.logo} />
         <View style={styles.account}>
           <Text style={styles.title}>Sign Up</Text>
-
           <View style={styles.inputContainer}>
             <TextInput
-              style={[styles.input, { color: '#2F2E41' }]}
+              style={[styles.input, {color: 'black'}]}
               placeholder="Create your username"
-              placeholderTextColor={'#2F2E41'}
+              placeholderTextColor={'black'}
               value={username}
               onChangeText={setUsername}
             />
 
             <TextInput
-              style={[styles.input, { color: '#2F2E41' }]}
+              style={[styles.input, {color: 'black'}]}
               placeholder="Enter your password"
-              placeholderTextColor={'#2F2E41'}
+              placeholderTextColor={'black'}
               value={password}
               onChangeText={setPassword}
               secureTextEntry={true}
             />
 
             <TextInput
-              style={[styles.input, { color: '#2F2E41' }]}
+              style={[styles.input, {color: 'black'}]}
               placeholder="Confirm your password"
-              placeholderTextColor={'#2F2E41'}
+              placeholderTextColor={'black'}
               value={confirmPassword}
               onChangeText={setConfirmPassword}
               secureTextEntry={true}
@@ -81,14 +83,13 @@ const SignUp = ({ navigation }) => {
 
             <TouchableOpacity
               style={styles.customBotton}
-              onPress={handleSignup}
-            >
+              onPress={handleSignup}>
               <Text style={styles.textt}>Sign Up</Text>
             </TouchableOpacity>
             <View style={styles.signupContainer}>
               <Text style={styles.signText}>Do you have an account? </Text>
 
-              <TouchableOpacity onPress={() => navigation.navigate('LogIn')}>
+              <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                 <Text style={[styles.signText, styles.signupLink]}>
                   Login Here
                 </Text>
@@ -101,4 +102,4 @@ const SignUp = ({ navigation }) => {
   );
 };
 
-export default SignUp;
+export default Test;

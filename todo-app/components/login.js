@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   TextInput,
@@ -7,16 +7,25 @@ import {
   SafeAreaView,
   Text,
 } from 'react-native';
+import Parse from 'parse/react-native';
 
 import styles from '../styles/logInStyles';
 
-const LogIn = ({navigation}) => {
-  const [username, setUsername] = useState('R@r.com');
-  const [password, setPassword] = useState('r');
-  const [confirmPassword, setConfirmPassword] = useState('r');
-  const [error, setError] = useState('');
+const LogIn = ({ navigation }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(''); // Add this line
 
-    console.log('Signing up user...');
+  const handleLogin = async () => {
+    try {
+      const user = await Parse.User.logIn(username, password);
+      console.log("Login successful");
+      navigation.navigate('Task');
+    } catch (error) {
+      setError("Invalid credentials"); // Set an error message here
+      console.error("Error: ", error);
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -26,19 +35,19 @@ const LogIn = ({navigation}) => {
           <Text style={styles.title}>Log In</Text>
           <View style={styles.inputConLogIn}>
             <TextInput
-              style={[styles.input, {color: 'black'}]}
+              style={[styles.input, { color: 'black' }]}
               placeholder="Enter your username"
               placeholderTextColor={'black'}
               value={username}
-              onChangeText={setUsername}
+              onChangeText={text => setUsername(text)}
             />
 
             <TextInput
-              style={[styles.input, {color: 'black'}]}
+              style={[styles.input, { color: 'black' }]}
               placeholder="Enter your password"
               placeholderTextColor={'black'}
               value={password}
-              onChangeText={setPassword}
+              onChangeText={text => setPassword(text)}
               secureTextEntry={true}
             />
 
@@ -46,14 +55,16 @@ const LogIn = ({navigation}) => {
 
             <TouchableOpacity
               style={styles.customBotton}
-              onPress={() => navigation.navigate('Task')}
-              >
+              onPress={handleLogin}
+            >
               <Text style={styles.textt}>Log In</Text>
             </TouchableOpacity>
             <View style={styles.signupContainer}>
               <Text style={styles.signText}>Don't have an account? </Text>
 
-              <TouchableOpacity onPress={() => navigation.navigate('Task')}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('SignUp')}
+              >
                 <Text style={[styles.signText, styles.signupLink]}>
                   SignUp Here
                 </Text>
